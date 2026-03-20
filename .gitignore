@@ -1,0 +1,21 @@
+# 数据类及临时文件 (量化项目中非常重要，防止把几十GB的数据推上GitHub撑爆仓库)
+Database/
+*.csv
+*.parquet
+*.duckdb
+*.db
+*.sqlite
+
+# Python/环境缓存
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
+
+# 虚拟环境 (如果有)
+venv/
+env/
+
+# IDE 配置
+.vscode/
+.idea/
