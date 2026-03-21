@@ -2,10 +2,10 @@
 
 在这里记录你每天的学习心得、踩坑笔记以及核心代码片段产出。你的物理代码文件应该放在对应的 `Learning_Vault/Phase1_Month1/WeekX/` 文件夹中。
 
-### 📊 当前阶段进度: Phase 1 (2/28 Days)
+### 📊 当前阶段进度: Phase 1 (3/28 Days)
 
 ```text
-进度条: [==..........................] 7%
+进度条: [===.........................] 10%
 已掌握核心理论: SQL到Pandas转换, 数仓交互, 投资组合矩阵运算初探
 ```
 
@@ -22,7 +22,7 @@
 | ---- | --------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | [x]  | **Day 1** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week1\day1_duckdb_init.py | 理解了 Python 相对路径受终端执行目录影响，学会了用 `__file__`动态定位；认识到 DuckDB 是二进制文件，不能用文本编辑器直接打开。 |
 | [x]  | **Day 2** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week1\day2_csv_gen.py     | 切忌硬编码，用动态寻址__file__和相对路径的方式编程；<br />.gitignore文件用来告诉git哪些文件（夹）不要同步                       |
-| [ ]  | **Day 3** | `Learning_Vault/Phase1_Month1/Week1/day3_sql_query.py`               | [待填写：DuckDB跑这10万行groupby有多快？]                                                                                       |
+| [x]  | **Day 3** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week1\day3_sql_query.py   | 体验了 DuckDB 直接将 CSV 路径作为表名进行零拷贝查询，学习了列修剪带来的极致 I/O 优化。                                          |
 | [ ]  | **Day 4** | `Learning_Vault/Phase1_Month1/Week1/day4_pandas_map.py`              | [待填写：SQL到Pandas的语法映射笔记链接]                                                                                         |
 | [ ]  | **Day 5** | `Learning_Vault/Phase1_Month1/Week1/day5_polars_test.py`             | [待填写：Polars比Pandas快多少？]                                                                                                |
 | [ ]  | **Day 6** | `Learning_Vault/Phase1_Month1/Week1/day6_real_data.py`               | [待填写：爬取到了哪个ETF的数据，遇到的反爬机制？]                                                                               |

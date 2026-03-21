@@ -12,6 +12,7 @@ description: "Manages Google NotebookLM notebooks, sources, research, and studio
 - User wants to generate studio artifacts (audio, video, slides, reports, quizzes, etc.)
 - User wants to query existing notebook knowledge or cross-query multiple notebooks
 - User asks about NotebookLM content, sharing, notes, or exports
+- **CRITICAL RESTRICTION**: ONLY trigger NotebookLM queries when the user explicitly asks about domain knowledge, long-term plans, or historical design patterns. DO NOT query for standard programming/syntax questions or routine local coding tasks.
 
 ## Key Concepts
 
