@@ -20,13 +20,13 @@
 
 ### Day 3
 
-- [ ] 任务：用 DuckDB Python API 直接读取该 CSV，利用你的老本行，执行包含 `GROUP BY ticker` 和 `ORDER BY` 的 SQL 查询。(📚 查阅 NotebookLM: `DuckDB Python 官方文档 -> Relational API / DataFrames`)
-- [ ] 产出：打印输出每日最高价和总成交量的查询结果日志。
+- [X] 任务：用 DuckDB Python API 直接读取该 CSV，利用你的老本行，执行包含 `GROUP BY ticker` 和 `ORDER BY` 的 SQL 查询。(📚 查阅 NotebookLM: `DuckDB Python 官方文档 -> Relational API / DataFrames`)
+- [X] 产出：打印输出每日最高价和总成交量的查询结果日志。
 
 ### Day 4
 
-- [ ] 任务：引入 Pandas，对比 SQL 中 `WHERE`、`SELECT`、`GROUP BY` 在 Pandas `DataFrame` 中的映射写法。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 10: Data Aggregation and Group Operations`)
-- [ ] 产出：用 Pandas 的 `.loc` 和 `.groupby()` 重写 Day 3 的查询，并建立个人的 SQL vs Pandas 语法对照表。
+- [X] 任务：引入 Pandas，对比 SQL 中 `WHERE`、`SELECT`、`GROUP BY` 在 Pandas `DataFrame` 中的映射写法。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 10: Data Aggregation and Group Operations`)
+- [X] 产出：用 Pandas 的 `.loc` 和 `.groupby()` 重写 Day 3 的查询，并建立个人的 SQL vs Pandas 语法对照表。
 
 ### Day 5
 
