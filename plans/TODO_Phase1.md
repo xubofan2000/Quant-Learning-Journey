@@ -30,18 +30,18 @@
 
 ### Day 5
 
-- [ ] 任务：浅尝 Polars 的懒加载（Lazy Evaluation）特性。感受列式处理与多线程在量化回测中的速度优势。(📚 查阅 NotebookLM: `DuckDB 官方文档与 Polars 交互概念`)
-- [ ] 产出：一段使用 Polars 读取 CSV 并执行与前天相同聚合操作的代码，并对比耗时。
+- [X] 任务：浅尝 Polars 的懒加载（Lazy Evaluation）特性。感受列式处理与多线程在量化回测中的速度优势。(📚 查阅 NotebookLM: `DuckDB 官方文档与 Polars 交互概念`)
+- [X] 产出：一段使用 Polars 读取 CSV 并执行与前天相同聚合操作的代码，并对比耗时。
 
 ### Day 6 (5小时)
 
-- [ ] 任务：实战！从类似 yfinance 或 tushare 的免费接口抓取真实的某只指数 ETF 5 年日线数据，持久化存入 DuckDB 物理文件(`.duckdb`)。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 6: Data Loading, Storage`)
-- [ ] 产出：本地成功生成包含真实连贯交易数据的 `.duckdb` 数据库文件。
+- [X] 任务：实战！从类似 yfinance 或 tushare 的免费接口抓取真实的某只指数 ETF 5 年日线数据，持久化存入 DuckDB 物理文件(`.duckdb`)。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 6: Data Loading, Storage`)
+- [X] 产出：本地成功生成包含真实连贯交易数据的 `.duckdb` 数据库文件。
 
 ### Day 7 (5小时)
 
-- [ ] 任务：自动化对账校验。用 SQL 在 DuckDB 算出月度平均收盘价，再用 Pandas 从该库读取全图后用 `.resample('M').mean()` 计算，断言两者结果一致。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 11: Time Series - Resampling`)
-- [ ] 产出：包含 `assert` 断言通过用例的对账 Python 脚本。
+- [X] 任务：自动化对账校验。用 SQL 在 DuckDB 算出月度平均收盘价，再用 Pandas 从该库读取全图后用 `.resample('M').mean()` 计算，断言两者结果一致。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 11: Time Series - Resampling`)
+- [X] 产出：包含 `assert` 断言通过用例的对账 Python 脚本。
 
 ## Week 2: 金融时序预处理与特征工程基建
 
