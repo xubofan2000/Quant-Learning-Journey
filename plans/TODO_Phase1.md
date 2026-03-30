@@ -49,13 +49,13 @@
 
 ### Day 1
 
-- [ ] 任务：学习 Pandas 的时序索引（DatetimeIndex）与前向/后向填充机制（`ffill`/`bfill`）。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 7: Data Cleaning and Preparation`)
-- [ ] 产出：给上周的真实股票数据代码里“随机挖空”（模拟停牌/断网），然后用上一交易日收盘价逻辑补全。
+- [X] 任务：学习 Pandas 的时序索引（DatetimeIndex）与前向/后向填充机制（`ffill`/`bfill`）。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 7: Data Cleaning and Preparation`)
+- [X] 产出：给上周的真实股票数据代码里“随机挖空”（模拟停牌/断网），然后用上一交易日收盘价逻辑补全。
 
 ### Day 2
 
-- [ ] 任务：理解 SQL 的 Window Function（窗口函数）在 Python 中的等价物 `.rolling()` 和 `.shift()`。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 11: Time Series - Moving Window Functions`)
-- [ ] 产出：给 DataFrame 增加两列：计算过去 5 日和 20 日的移动平均线 (SMA)。
+- [X] 任务：理解 SQL 的 Window Function（窗口函数）在 Python 中的等价物 `.rolling()` 和 `.shift()`。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 11: Time Series - Moving Window Functions`)
+- [X] 产出：给 DataFrame 增加两列：计算过去 5 日和 20 日的移动平均线 (SMA)。
 
 ### Day 3
 
