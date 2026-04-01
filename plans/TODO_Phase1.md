@@ -64,8 +64,8 @@
 
 ### Day 4
 
-- [ ] 任务：多表关联（Join/Merge），体会 SQL `LEFT JOIN` 与 Pandas `.merge(how='left')` 的一致性及避坑（防止行数膨胀）。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 8: Data Wrangling: Join, Combine`)
-- [ ] 产出：抓取沪深300（或标普及准），按日期作为 Key，与个股数据进行 Left Join 严格对齐。
+- [X] 任务：多表关联（Join/Merge），体会 SQL `LEFT JOIN` 与 Pandas `.merge(how='left')` 的一致性及避坑（防止行数膨胀）。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 8: Data Wrangling: Join, Combine`)
+- [X] 产出：抓取沪深300（或标普及准），按日期作为 Key，与个股数据进行 Left Join 严格对齐。
 
 ### Day 5
 
