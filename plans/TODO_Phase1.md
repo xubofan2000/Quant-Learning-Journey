@@ -69,8 +69,8 @@
 
 ### Day 5
 
-- [ ] 任务：拥抱量化界标配存储架构——Parquet 格式。比起 CSV 的体积与反序列化速度优势在哪？怎么联手 DuckDB 使用？(📚 查阅 NotebookLM: `DuckDB 官方文档 -> Data Import/Export (Parquet)`)
-- [ ] 产出：将清洗并关联好的宽表 DataFrame 直接压缩保存为 `clean_data.parquet` 文件。
+- [X] 任务：拥抱量化界标配存储架构——Parquet 格式。比起 CSV 的体积与反序列化速度优势在哪？怎么联手 DuckDB 使用？(📚 查阅 NotebookLM: `DuckDB 官方文档 -> Data Import/Export (Parquet)`)
+- [X] 产出：将清洗并关联好的宽表 DataFrame 直接压缩保存为 `clean_data.parquet` 文件。
 
 ### Day 6 (5小时)
 

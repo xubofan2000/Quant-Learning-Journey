@@ -12,7 +12,6 @@ print(df_szzs.tail(10))
 current_dir = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(current_dir,'..','..','..','Database','files','market_data.duckdb')
 
-
 conn = duckdb.connect(db_path)
 conn.execute('''
     CREATE TABLE IF NOT EXISTS szzs (
