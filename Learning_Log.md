@@ -2,10 +2,10 @@
 
 在这里记录你每天的学习心得、踩坑笔记以及核心代码片段产出。你的物理代码文件应该放在对应的 `Learning_Vault/Phase1_Month1/WeekX/` 文件夹中。
 
-### 📊 当前阶段进度: Phase 1 (12/28 Days)
+### 📊 当前阶段进度: Phase 1 (13/28 Days)
 
 ```text
-进度条: [============................] 42%
+进度条: [=============...............] 46%
 已掌握核心理论: SQL到Pandas转换, 数仓交互, 投资组合矩阵运算初探
 ```
 
@@ -40,7 +40,7 @@
 | [x]  | [x]              | **Day 3** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week2\day3_log_returns.py   | 全年收益率应该用今年年末-去年年末。就像在计算首日的收益率时也是用今年第一天的收盘价-去年最后一天的收盘价。<br />对数收益率可以累加。                                                                               |
 | [x]  | [x]              | **Day 4** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week2\day4_join_merge.py    | pd.merge等效于SQL的JOIN                                                                                                                                                                                            |
 | [x]  | [x]              | **Day 5** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week2\day5_parquet.py       | duckdb配合parquet数据抽取是最快的组合，其次是to_parquet                                                                                                                                                            |
-| [ ]  | [ ]              | **Day 6** | `Learning_Vault/.../Week2/`                                            | [待填写]                                                                                                                                                                                                           |
+| [x]  | [x]              | **Day 6** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week2\day6_data_pipeline.py | 串联了之前所有的核心要点，实现了真正可用的数据pipline类                                                                                                                                                            |
 | [ ]  | [ ]              | **Day 7** | `Learning_Vault/.../Week2/`                                            | [待填写]                                                                                                                                                                                                           |
 
 </details>

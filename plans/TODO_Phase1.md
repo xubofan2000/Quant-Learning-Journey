@@ -74,8 +74,8 @@
 
 ### Day 6 (5小时)
 
-- [ ] 任务：项目面向对象重构。串联前两周，用面向对象 (OOP) 封装一个 `DataHandler` 类，暴露 `load_raw`, `clean`, `save_feature` 等标准方法。
-- [ ] 产出：一个脱离了面条代码（Spaghetti code）的结构化 `data_pipeline.py`。
+- [X] 任务：项目面向对象重构。串联前两周，用面向对象 (OOP) 封装一个 `DataHandler` 类，暴露 `load_raw`, `clean`, `save_feature` 等标准方法。
+- [X] 产出：一个脱离了面条代码（Spaghetti code）的结构化 `data_pipeline.py`。
 
 ### Day 7 (5小时)
 
