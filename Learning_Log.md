@@ -2,10 +2,10 @@
 
 在这里记录你每天的学习心得、踩坑笔记以及核心代码片段产出。你的物理代码文件应该放在对应的 `Learning_Vault/Phase1_Month1/WeekX/` 文件夹中。
 
-### 📊 当前阶段进度: Phase 1 (13/28 Days)
+### 📊 当前阶段进度: Phase 1 (15/28 Days)
 
 ```text
-进度条: [=============...............] 46%
+进度条: [===============.............] 53%
 已掌握核心理论: SQL到Pandas转换, 数仓交互, 投资组合矩阵运算初探
 ```
 
@@ -41,22 +41,22 @@
 | [x]  | [x]              | **Day 4** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week2\day4_join_merge.py    | pd.merge等效于SQL的JOIN                                                                                                                                                                                            |
 | [x]  | [x]              | **Day 5** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week2\day5_parquet.py       | duckdb配合parquet数据抽取是最快的组合，其次是to_parquet                                                                                                                                                            |
 | [x]  | [x]              | **Day 6** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week2\day6_data_pipeline.py | 串联了之前所有的核心要点，实现了真正可用的数据pipline类                                                                                                                                                            |
-| [ ]  | [ ]              | **Day 7** | `Learning_Vault/.../Week2/`                                            | [待填写]                                                                                                                                                                                                           |
+| [x]  | [x]              | **Day 7** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week2\day7_stress_test.py   | 标准量化模拟数据生成的流程还考虑到伊藤引理的影响，由年到日                                                                                                                                                         |
 
 </details>
 
 <details>
 <summary><b>🔥 Week 3 / 从理论到代码 - 线性代数与资产组合映射</b></summary>
 
-| 打卡 | 复习回溯 (1/3/7) | Day             | 产出成果定位                  | 今日高光摘要 (Highlights & Bugs) |
-| ---- | ---------------- | --------------- | ----------------------------- | -------------------------------- |
-| [ ]  | [ ]              | **Day 1** | `Learning_Vault/.../Week3/` | [待填写]                         |
-| [ ]  | [ ]              | **Day 2** | `Learning_Vault/.../Week3/` | [待填写]                         |
-| [ ]  | [ ]              | **Day 3** | `Learning_Vault/.../Week3/` | [待填写]                         |
-| [ ]  | [ ]              | **Day 4** | `Learning_Vault/.../Week3/` | [待填写]                         |
-| [ ]  | [ ]              | **Day 5** | `Learning_Vault/.../Week3/` | [待填写]                         |
-| [ ]  | [ ]              | **Day 6** | `Learning_Vault/.../Week3/` | [待填写]                         |
-| [ ]  | [ ]              | **Day 7** | `Learning_Vault/.../Week3/` | [待填写]                         |
+| 打卡 | 复习回溯 (1/3/7) | Day             | 产出成果定位                                                                  | 今日高光摘要 (Highlights & Bugs)                            |
+| ---- | ---------------- | --------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| [x]  | [x]              | **Day 1** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week3\day1_vector_dot_product.py | 时间序列上加总用 Log Return，横截面加权求和用 Simple Return |
+| [ ]  | [ ]              | **Day 2** | `Learning_Vault/.../Week3/`                                                 | [待填写]                                                    |
+| [ ]  | [ ]              | **Day 3** | `Learning_Vault/.../Week3/`                                                 | [待填写]                                                    |
+| [ ]  | [ ]              | **Day 4** | `Learning_Vault/.../Week3/`                                                 | [待填写]                                                    |
+| [ ]  | [ ]              | **Day 5** | `Learning_Vault/.../Week3/`                                                 | [待填写]                                                    |
+| [ ]  | [ ]              | **Day 6** | `Learning_Vault/.../Week3/`                                                 | [待填写]                                                    |
+| [ ]  | [ ]              | **Day 7** | `Learning_Vault/.../Week3/`                                                 | [待填写]                                                    |
 
 </details>
 

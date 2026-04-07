@@ -79,8 +79,8 @@
 
 ### Day 7 (5小时)
 
-- [ ] 任务：基建初次压力测试。尝试循环抓取/生成 50 只股票的数据并合并，测试你的 Pipeline 的内存占用，引入 `tqdm` 加上进度条监控体验。(📚 查阅 NotebookLM: 对 Pandas 的大规模数据处理与向量化进行摘要提问)
-- [ ] 产出：输出含有 50 个股票维度（MultiIndex或长表形式）的复合面板数据。
+- [X] 任务：基建初次压力测试。尝试循环抓取/生成 50 只股票的数据并合并，测试你的 Pipeline 的内存占用，引入 `tqdm` 加上进度条监控体验。(📚 查阅 NotebookLM: 对 Pandas 的大规模数据处理与向量化进行摘要提问)
+- [X] 产出：输出含有 50 个股票维度（MultiIndex或长表形式）的复合面板数据。
 
 ## Week 3: 从理论到代码 - 线性代数与资产组合映射
 
@@ -88,8 +88,8 @@
 
 ### Day 1
 
-- [ ] 任务：理解向量与矩阵点乘。直接将“股票配置权重”看作 $1 \times N$ 向量，“每日收益”看作 $N \times 1$ 向量。(📚 查阅 NotebookLM: `Mathematics for Machine Learning -> Chapter 2: Linear Algebra (Vectors & Matrices)`)
-- [ ] 产出：使用 `np.array` 定义 3 权重与当日收益，用一行 `np.dot` / `@` 算出当天的资金曲线总收益。
+- [X] 任务：理解向量与矩阵点乘。直接将“股票配置权重”看作 $1 \times N$ 向量，“每日收益”看作 $N \times 1$ 向量。(📚 查阅 NotebookLM: `Mathematics for Machine Learning -> Chapter 2: Linear Algebra (Vectors & Matrices)`)
+- [X] 产出：使用 `np.array` 定义 3 权重与当日收益，用一行 `np.dot` / `@` 算出当天的资金曲线总收益。
 
 ### Day 2
 
