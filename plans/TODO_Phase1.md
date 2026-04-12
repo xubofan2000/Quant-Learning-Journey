@@ -93,13 +93,13 @@
 
 ### Day 2
 
-- [ ] 任务：理解按元素乘法（`*`）与矩阵叉乘（`@`）的区别。意识到 Pandas 底层运算剥开就是 NumPy。
-- [ ] 产出：构造 50 天 x 50 只股票的收益矩阵，分别使用 `for` 循环与 Numpy 矩阵运算求和，打印耗时差异。
+- [X] 任务：理解按元素乘法（`*`）与矩阵叉乘（`@`）的区别。意识到 Pandas 底层运算剥开就是 NumPy。
+- [X] 产出：构造 50 天 x 50 只股票的收益矩阵，分别使用 `for` 循环与 Numpy 矩阵运算求和，打印耗时差异。
 
 ### Day 3
 
-- [ ] 任务：代码手撸协方差矩阵（Covariance Matrix）。这是马科维茨风控衡量资产间相关性的心脏步骤。(📚 查阅 NotebookLM: `Mathematics for Machine Learning -> Chapter 6: Probability and Distributions (Covariance)`)
-- [ ] 产出：调用 `np.cov()` 与手工推导公式两种方式，算出历史收益的相关结构，结果进行 assert 验证。
+- [X] 任务：代码手撸协方差矩阵（Covariance Matrix）。这是马科维茨风控衡量资产间相关性的心脏步骤。(📚 查阅 NotebookLM: `Mathematics for Machine Learning -> Chapter 6: Probability and Distributions (Covariance)`)
+- [X] 产出：调用 `np.cov()` 与手工推导公式两种方式，算出历史收益的相关结构，结果进行 assert 验证。
 
 ### Day 4
 
