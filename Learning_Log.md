@@ -54,7 +54,7 @@
 | [x]  | [ ]              | **Day 2** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week3\day2_elementwise_vs_matmul.py | *是broadcasting(展开)保留明细，@是contraction(坍缩)汇总；Pandas底层就是NumPy多一步索引对齐开销；分散化效应数学证明 |
 | [x]  | [ ]              | **Day 3** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week3\day3_covariance_matrix.py     | 协方差矩阵由各股票面板转宽表后先去除每支股票的均值，除以t-1后再通过矩阵乘法得到N*N的协方差矩阵                     |
 | [x]  | [ ]              | **Day 4** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week3\day4_portfolio_variance.py    | σ²_p = w^T @ Σ @ w，实现了基础理论到二次型的转换，并配合蒙特卡洛随机权重生成了散点图版风险有效前沿。 |
-| [x]  | [ ]              | **Day 5** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week3\day5_markowitz_optimizer.py | 使用 scipy.optimize.minimize(SLSQP) 将投资组合问题抽象为带约束的目标函数（如最小方差或负夏普），通过解析优化逼近完美的有效前沿抛物线，优于蒙特卡洛。 |
+| [x]  | [ ]              | **Day 5** | D:\project\Bohr\Learning_Vault\Phase1_Month1\Week3\day5_eigendecomposition_pca.py | 掌握了 eigh 分解 Σ=QΛQᵀ，提取方差解释率，证明 PC1≈市场Beta因子，验证重构误差达机器精度。 |
 | [ ]  | [ ]              | **Day 6** | `Learning_Vault/.../Week3/`                                                    | [待填写]                                                                                                           |
 | [ ]  | [ ]              | **Day 7** | `Learning_Vault/.../Week3/`                                                    | [待填写]                                                                                                           |
 
