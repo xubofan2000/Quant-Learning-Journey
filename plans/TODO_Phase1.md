@@ -108,8 +108,8 @@
 
 ### Day 5
 
-- [ ] 任务：特征值与特征向量的金融具象意义（PCA 主成分提取市场 Beta 风险因子初探）。(📚 查阅 NotebookLM: `Mathematics for Machine Learning -> Chapter 4: Matrix Decompositions (Eigendecomposition & PCA)`)
-- [ ] 产出：通过 `scipy.linalg.eigh` 解剖你生成的协方差矩阵，提取最大的特征值（最大震荡方向）。
+- [X] 任务：特征值与特征向量的金融具象意义（PCA 主成分提取市场 Beta 风险因子初探）。(📚 查阅 NotebookLM: `Mathematics for Machine Learning -> Chapter 4: Matrix Decompositions (Eigendecomposition & PCA)`)
+- [X] 产出：通过 `scipy.linalg.eigh` 解剖你生成的协方差矩阵，提取最大的特征值（最大震荡方向）。
 
 ### Day 6 (5小时)
 
