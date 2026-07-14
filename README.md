@@ -10,8 +10,12 @@ Bohr 是一套以真实代码、研究规范和复盘产物为核心的量化学
    ```
 2. 根据输出定位当天任务：`curriculum/plans/TODO_Phase1.md`。
 3. 在对应的 `Learning_Vault/Phase1_Month1/WeekN/` 编写、运行和理解代码。
-4. 完成学习检验与总结后，才更新 `Learning_Log.md` 和 TODO。
-5. 提交前运行测试：
+4. 完成学习检验与总结后，更新 `Learning_Log.md` 和 TODO。
+5. 运行进度条更新脚本刷新状态：
+   ```powershell
+   .\.venv\Scripts\python.exe project\scripts\update_progress.py
+   ```
+6. 提交前运行测试并使用 Git 提交代码：
    ```powershell
    .\.venv\Scripts\python.exe -m unittest discover -s project\tests -v
    ```
@@ -25,7 +29,7 @@ Bohr 是一套以真实代码、研究规范和复盘产物为核心的量化学
 | 编写/阅读学习代码与笔记 | `Learning_Vault/` |
 | 使用本地数据 | `Database/` |
 | 查长期路线和资料索引 | `curriculum/knowledge-base/` |
-| 使用脚本、模板、规范和测试 | `project/` |
+| 使用脚本、模板、规范与测试 | `project/` |
 
 完整结构、各目录职责和常用命令见 `project/docs/STRUCTURE_GUIDE.md`。
 
