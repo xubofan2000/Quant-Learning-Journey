@@ -1,0 +1,5 @@
+-r requirements-core.txt
+
+# Week 4 / Phase 2 前安装后，请将验证过的精确版本回填到此文件。
+matplotlib>=3.8,<4
+statsmodels>=0.14,<0.15

@@ -1,0 +1,9 @@
+# 已在本项目当前基础课程环境中验证的直接依赖。
+akshare==1.18.47
+duckdb==1.5.1
+numpy==2.4.3
+pandas==3.0.1
+polars==1.39.3
+pyarrow==23.0.1
+scipy==1.17.1
+tqdm==4.67.3

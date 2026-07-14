@@ -1,14 +1,16 @@
 import re
-import os
+from pathlib import Path
 
-LOG_FILE = 'D:\\project\\Bohr\\Learning_Log.md'
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+LOG_FILE = PROJECT_ROOT / "Learning_Log.md"
 
 def update_progress():
-    if not os.path.exists(LOG_FILE):
+    if not LOG_FILE.exists():
         print("未找到 Learning_Log.md")
         return
     
-    with open(LOG_FILE, 'r', encoding='utf-8') as f:
+    with LOG_FILE.open('r', encoding='utf-8') as f:
         content = f.read()
     
     # 在表格中查找打卡标记：| [x] | 或者 | [ ] |
@@ -43,7 +45,7 @@ def update_progress():
         content
     )
     
-    with open(LOG_FILE, 'w', encoding='utf-8') as f:
+    with LOG_FILE.open('w', encoding='utf-8') as f:
         f.write(content)
         
     print(f"✅ 进度已更新: {completed_days}/{total_days} ({percentage}%)\n刷新了进度条: [{bar}]")
