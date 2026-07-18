@@ -15,14 +15,9 @@ description: "管理 Bohr 项目的 AI 量化学习全流程。当用户提到�
 
 ```
 d:\project\Bohr\
-├── AI_Quant_Knowledge_Base/        # 四个阶段的总目标文档
-│   ├── 01_Phase1_基建与数理.md
-│   ├── 02_Phase2_框架与因子.md
-│   ├── 03_Phase3_Agent架构.md
-│   ├── 04_Phase4_合规与实盘.md
-│   └── 量化学习资料索引.md          # 学习资源总索引（295条）
-├── plans/                          # 月度详细学习计划
-│   └── TODO_Phase1.md              # 当前月计划（28天逐日任务）
+├── curriculum/
+│   ├── knowledge-base/             # 四个阶段目标与资料索引
+│   └── plans/                      # TODO 与 Phase 执行计划
 ├── Learning_Vault/                 # 学习产出物
 │   └── Phase1_Month1/
 │       ├── Week1/                  # 每天: dayN_<name>.py + DayN_<中文>总结.md
@@ -32,7 +27,7 @@ d:\project\Bohr\
 │       └── Practice1/             # 练习草稿（非正式产出）
 ├── Database/files/                 # 数据文件（panel_50stocks.parquet等）
 ├── Learning_Log.md                 # 每日打卡记录（主进度追踪文件）
-└── update_progress.py              # 进度条更新脚本
+└── project/scripts/                # 进度审计与进度条更新脚本
 ```
 
 ---
@@ -58,7 +53,7 @@ d:\project\Bohr\
 ### 检测步骤（按顺序）
 
 1. **读取 `Learning_Log.md`** → 找到第一个 `[ ]`（未打卡）的 Day，确定当前 Week 和 Day 编号
-2. **读取 `plans/TODO_Phase1.md`** → 找到对应 Day 的任务描述和产出要求（**TODO 是权威来源**）
+2. **读取 `curriculum/plans/TODO_Phase1.md`** → 找到对应 Day 的任务描述和产出要求（**TODO 是权威来源**）
 3. **扫描 `Learning_Vault/.../WeekN/` 目录** → 检查实际文件存在情况
 
 ### 三源交叉判断逻辑
@@ -120,7 +115,7 @@ d:\project\Bohr\
 [自动] Step 8: 更新 Learning_Log.md
        → 将对应 Day 的 `[ ]` 改为 `[x]`
        → 在「今日高光摘要」列写入一句话总结（从今日核心认知提炼）
-       → 运行 update_progress.py 更新进度条
+→ 运行 `project/scripts/update_progress.py` 更新进度条
 
 [提示] Step 9: 提示用户 Git 操作
        → 提示用户执行 git add + commit + push
@@ -141,7 +136,7 @@ d:\project\Bohr\
 ```
 触发条件: 用户说"制定下个月的计划"或当前月 TODO 全部完成
 
-[自动] Step 1: 读取当前 Phase 的目标文档（AI_Quant_Knowledge_Base/）
+[自动] Step 1: 读取当前 Phase 的目标文档（curriculum/knowledge-base/）
 [自动] Step 2: 读取 Learning_Log.md，统计已完成项和薄弱点
 [自动] Step 3: 读取上月 TODO 完成情况，识别未完成/偏差项
 [自动] Step 4: ⚠️ 若是 Phase 交接（如 Phase 1→2），必须先触发 Workflow C+（环境扫描）
@@ -340,12 +335,12 @@ Agent 负责写入打卡记录，格式参考现有表格：
 
 | 文件 | 路径 |
 |------|------|
-| 当前月计划 | `d:\project\Bohr\plans\TODO_Phase1.md` |
+| 当前月计划 | `d:\project\Bohr\curriculum\plans\TODO_Phase1.md` |
 | 打卡日志 | `d:\project\Bohr\Learning_Log.md` |
-| 进度更新脚本 | `d:\project\Bohr\update_progress.py` |
+| 进度更新脚本 | `d:\project\Bohr\project\scripts\update_progress.py` |
 | 面板数据 | `d:\project\Bohr\Database\files\panel_50stocks.parquet` |
 | Phase1 产出目录 | `d:\project\Bohr\Learning_Vault\Phase1_Month1\` |
-| Phase 目标文档 | `d:\project\Bohr\AI_Quant_Knowledge_Base\0N_PhaseN_*.md` |
+| Phase 目标文档 | `d:\project\Bohr\curriculum\knowledge-base\0N_PhaseN_*.md` |
 
 ---
 
