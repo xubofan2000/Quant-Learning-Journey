@@ -1,54 +1,35 @@
-import re
 from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 LOG_FILE = PROJECT_ROOT / "Learning_Log.md"
 
-def update_progress():
+def summarize_legacy_checkins() -> tuple[int, int]:
+    """Report historical check-ins without changing capability or log files."""
     if not LOG_FILE.exists():
-        print("未找到 Learning_Log.md")
-        return
-    
-    with LOG_FILE.open('r', encoding='utf-8') as f:
-        content = f.read()
-    
-    # 在表格中查找打卡标记：| [x] | 或者 | [ ] |
-    # 注意 Markdown 表格前后的空格
-    total_matches = re.findall(r'\|\s*\[([xX ])\]\s*\|', content)
-    if not total_matches:
-        print("未在文件中找到任务复选框")
-        return
-        
-    total_days = len(total_matches)
-    completed_days = sum(1 for m in total_matches if m.lower() == 'x')
-    
-    percentage = int((completed_days / total_days) * 100) if total_days > 0 else 0
-    
-    # 动态生成长度为 28 的进度条
-    bar_length = 28
-    filled = int((completed_days / total_days) * bar_length) if total_days > 0 else 0
-    empty = bar_length - filled
-    bar = '=' * filled + '.' * empty
-    
-    # 正则替换天数进度：Phase 1 (X/28 Days)
-    content = re.sub(
-        r'### 📊 当前阶段进度: Phase 1 \(\d+/\d+ Days\)', 
-        f'### 📊 当前阶段进度: Phase 1 ({completed_days}/{total_days} Days)', 
-        content
+        raise FileNotFoundError("未找到 Learning_Log.md")
+
+    completed_days = 0
+    total_days = 0
+    for line in LOG_FILE.read_text(encoding="utf-8").splitlines():
+        if "**Day " not in line or not line.lstrip().startswith("|"):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if not cells or cells[0].lower() not in {"[x]", "[ ]"}:
+            continue
+        total_days += 1
+        completed_days += cells[0].lower() == "[x]"
+
+    print(
+        f"历史打卡记录：{completed_days}/{total_days}。"
+        "此命令不再写入进度条，也不更新能力等级；请使用 JOB_CAPABILITY_MATRIX.md。"
     )
-    
-    # 正则替换字符进度条：进度条: [====....] X%
-    content = re.sub(
-        r'进度条: \[.*?\] \d+%', 
-        f'进度条: [{bar}] {percentage}%', 
-        content
-    )
-    
-    with LOG_FILE.open('w', encoding='utf-8') as f:
-        f.write(content)
-        
-    print(f"✅ 进度已更新: {completed_days}/{total_days} ({percentage}%)\n刷新了进度条: [{bar}]")
+    return completed_days, total_days
+
+
+def update_progress() -> tuple[int, int]:
+    """Backward-compatible entry point; no longer mutates Learning_Log.md."""
+    return summarize_legacy_checkins()
 
 if __name__ == '__main__':
     update_progress()

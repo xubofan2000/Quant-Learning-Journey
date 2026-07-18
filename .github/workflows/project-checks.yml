@@ -6,14 +6,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  governance:
+  current-checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Audit learning records
+          cache: pip
+      - name: Install actual core dependencies
+        run: python -m pip install -r project/requirements/requirements-core.txt
+      - name: Audit historical learning evidence
         run: python project/scripts/project_audit.py
-      - name: Run governance tests
+      - name: Audit curriculum contract
+        run: python project/scripts/curriculum_audit.py
+      - name: Run current tests
         run: python -m unittest discover -s project/tests -v

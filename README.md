@@ -1,40 +1,42 @@
-# Bohr：AI 辅助量化学习项目
+# Bohr：就业导向的量化学习工程
 
-Bohr 是一套以真实代码、研究规范和复盘产物为核心的量化学习工程。根目录只保留学习入口、学习产物和数据；课程资料与项目工具已按用途收纳。
+Bohr 服务于“一年内获得量化相关岗位”的现实目标，以全职工作并行、稳定产出和可验证能力为约束。建议长期投入 12-15 小时/周，不建议裸辞；进度以能力验收为主，不再以连续打卡或 `20/28 Days` 代表掌握。
+
+第一求职目标依次是：量化数据开发 / 金融数据工程、量化研究平台 Python 开发、投研数据支持 / 金融数据分析 / 风险数据岗位。中低频量化开发与量化研究助理是第二阶段目标；高频研究、低延迟 C++ 和高学历门槛的纯策略研究不是一年内主线。学历、专业、所在城市和可接受城市仍待学习者确认。
 
 ## 从这里开始
 
-1. 运行当前状态审计：
+1. 查看当前能力矩阵：`curriculum/plans/JOB_CAPABILITY_MATRIX.md`。
+2. 从 `curriculum/plans/NEXT_12_WEEKS.md` 的 Week 1 开始；第一项任务是不看原代码完成最新 Week 3 恢复训练。
+3. 运行历史证据和课程一致性审计：
    ```powershell
    .\.venv\Scripts\python.exe project\scripts\project_audit.py
+   .\.venv\Scripts\python.exe project\scripts\curriculum_audit.py
    ```
-2. 根据输出定位当天任务：`curriculum/plans/TODO_Phase1.md`。
-3. 在对应的 `Learning_Vault/Phase1_Month1/WeekN/` 编写、运行和理解代码。
-4. 完成学习检验与总结后，更新 `Learning_Log.md` 和 TODO。
-5. 运行进度条更新脚本刷新状态：
-   ```powershell
-   .\.venv\Scripts\python.exe project\scripts\update_progress.py
-   ```
-6. 提交前运行测试并使用 Git 提交代码：
+4. 每周复制 `project/templates/WEEKLY_ACCEPTANCE_TEMPLATE.md`，记录独立实现、自动测试、口述验收和补救。
+5. 提交前运行测试：
    ```powershell
    .\.venv\Scripts\python.exe -m unittest discover -s project\tests -v
    ```
 
 ## 快速导航
 
-| 你想做什么 | 去哪里 |
-| --- | --- |
-| 看今天该学什么 | `curriculum/plans/` |
-| 查看当前学习状态 | `Learning_Log.md` 或状态审计命令 |
-| 编写/阅读学习代码与笔记 | `Learning_Vault/` |
-| 使用本地数据 | `Database/` |
-| 查长期路线和资料索引 | `curriculum/knowledge-base/` |
-| 使用脚本、模板、规范与测试 | `project/` |
+| 你想做什么                 | 去哪里                             |
+| -------------------------- | ---------------------------------- |
+| 看未来 12 周任务           | `curriculum/plans/NEXT_12_WEEKS.md` |
+| 查看当前能力状态           | `curriculum/plans/JOB_CAPABILITY_MATRIX.md` |
+| 编写/阅读学习代码与笔记    | `Learning_Vault/`                |
+| 使用本地数据               | `Database/`                      |
+| 查长期路线和资料索引       | `curriculum/knowledge-base/`     |
+| 使用脚本、模板、规范与测试 | `project/`                       |
 
 完整结构、各目录职责和常用命令见 `project/docs/STRUCTURE_GUIDE.md`。
 
-## 基本原则
+## 进度与证据原则
 
-- `curriculum/plans/` 定义任务范围，`Learning_Log.md` 记录学习者确认的完成状态，`Learning_Vault/` 保存证据。
-- 代码文件存在不等于已完成学习；以审计结果和学习者确认推进进度。
-- 研究结论须遵守 `project/docs/RESEARCH_PROTOCOL.md`，真实交易相关内容默认只在模拟环境中开展。
+- `curriculum/plans/` 定义任务与退出门槛；岗位能力矩阵记录经过验收的能力；`Learning_Log.md` 和 `Learning_Vault/` 保存历史过程与证据。
+- 文件存在、AI 生成代码、历史打卡、最高收益或 GitHub 星数都不是掌握或项目质量的充分证据。
+- 同一能力只有在“能不看答案独立实现 + 测试通过 + 能解释金融含义和假设”同时成立时才标记为掌握。
+- `R @ W.T` 是固定权重收益的向量化演示，不是包含交易、成本、现金和无法成交的完整回测。
+- p-value 只能量化特定假设与模型前提下的统计证据；Monte Carlo/GBM 用于情景模拟、风险分析和模型理解；PCA 的 PC1 不能仅凭模拟数据命名为市场 Beta。
+- 研究结论遵守 `project/docs/RESEARCH_PROTOCOL.md`。Agent 最多 2-3 周且有前置门槛；模拟执行与治理最多 4-6 周；真实交易不属于当前课程默认范围。

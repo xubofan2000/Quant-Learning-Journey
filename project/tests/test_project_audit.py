@@ -35,8 +35,8 @@ class ProjectAuditTests(unittest.TestCase):
 
             states = audit_project(fixture_root)
 
-        self.assertEqual("完成", classify_state(states[DayKey(1, 1)]))
-        self.assertEqual("待学习者确认", classify_state(states[DayKey(1, 2)]))
+        self.assertEqual("历史记录一致（非掌握证明）", classify_state(states[DayKey(1, 1)]))
+        self.assertEqual("有文件，待学习者验收", classify_state(states[DayKey(1, 2)]))
 
     def test_report_names_the_next_unconfirmed_day(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
@@ -45,5 +45,6 @@ class ProjectAuditTests(unittest.TestCase):
 
             report = render_report(audit_project(fixture_root), fixture_root)
 
-        self.assertIn("下一待确认任务：Week 1 / Day 2", report)
-        self.assertIn("待学习者确认", report)
+        self.assertIn("下一历史待验收项：Week 1 / Day 2", report)
+        self.assertIn("有文件，待学习者验收", report)
+        self.assertIn("不判断能力掌握", report)

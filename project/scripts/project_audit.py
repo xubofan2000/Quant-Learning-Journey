@@ -136,14 +136,14 @@ def audit_project(root_path: Path) -> dict[DayKey, DayState]:
 def classify_state(state: DayState) -> str:
     """Return a concise status based on the three independent evidence sources."""
     if state.logged_complete and state.planned_complete and state.has_code:
-        return "完成"
+        return "历史记录一致（非掌握证明）"
     if state.has_code and not state.logged_complete:
-        return "待学习者确认"
+        return "有文件，待学习者验收"
     if state.logged_complete and not state.has_code:
         return "缺少代码产物"
     if state.logged_complete != state.planned_complete:
-        return "计划与打卡不一致"
-    return "未开始"
+        return "历史计划与打卡不一致"
+    return "历史计划未开始"
 
 
 def detect_large_untracked_files(root_path: Path) -> list[str]:
@@ -166,13 +166,13 @@ def render_report(states: dict[DayKey, DayState], root_path: Path) -> str:
     completed_days = sum(1 for state in states.values() if state.logged_complete)
     next_day = next((key for key, state in states.items() if not state.logged_complete), None)
     lines = [
-        "# Bohr 学习状态审计",
+        "# Bohr 历史学习证据审计",
         "",
-        "此报告由脚本派生，不是新的进度事实源。",
+        "此报告只核对历史计划、打卡和文件是否一致，不判断能力掌握。当前能力以 `curriculum/plans/JOB_CAPABILITY_MATRIX.md` 为准。",
         "",
         f"- 项目根目录：`{root_path.as_posix()}`",
-        f"- 学习者已确认：{completed_days}/{total_days}",
-        f"- 下一待确认任务：Week {next_day.week} / Day {next_day.day}" if next_day else "- 下一待确认任务：无",
+        f"- 历史打卡确认：{completed_days}/{total_days}（非掌握比例）",
+        f"- 下一历史待验收项：Week {next_day.week} / Day {next_day.day}" if next_day else "- 下一历史待验收项：无",
         "",
         "| 任务 | TODO | 打卡 | 代码 | 检验 | 总结 | 状态 |",
         "| --- | --- | --- | --- | --- | --- | --- |",
@@ -192,10 +192,10 @@ def render_report(states: dict[DayKey, DayState], root_path: Path) -> str:
             )
         )
 
-    pending_confirmation = [key for key, state in states.items() if classify_state(state) == "待学习者确认"]
+    pending_confirmation = [key for key, state in states.items() if classify_state(state) == "有文件，待学习者验收"]
     if pending_confirmation:
         formatted_days = "、".join(f"Week {key.week} Day {key.day}" for key in pending_confirmation)
-        lines.extend(["", f"> 提示：{formatted_days} 已有代码，但尚未完成学习者确认与正式打卡。"])
+        lines.extend(["", f"> 提示：{formatted_days} 已有代码，但尚未完成独立实现、测试和口述验收；不得据此更新能力等级。"])
 
     # Spaced repetition reminder
     needs_review = [
@@ -205,7 +205,7 @@ def render_report(states: dict[DayKey, DayState], root_path: Path) -> str:
     ]
     if needs_review:
         formatted_reviews = "、".join(needs_review)
-        lines.extend(["", f"> 🔁 **间隔重复复习提醒**：{formatted_reviews} 已完成打卡但尚未复习。请根据艾宾浩斯记忆法安排复习，并在 `Learning_Log.md` 中勾选。"])
+        lines.extend(["", f"> 复验提醒：{formatted_reviews} 有历史打卡但没有历史复习标记。是否复验及复验范围应由能力矩阵和当前薄弱点决定。"])
 
     # Git large file warning
     large_files = detect_large_untracked_files(root_path)

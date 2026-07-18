@@ -1,6 +1,10 @@
-# Phase 1 (Month 1): 基建与数理 - 项目驱动学习计划
+# Phase 1 历史计划：基建与数理（已由能力验收路线接管）
 
-作为具备 1 年 SQL 经验的工程师，前两周核心是**迁移你的SQL思维到Python(DuckDB/Pandas/Polars)**；后两周核心是**将抽象数学公式转译为 NumPy/Scipy 代码**。每天 2 小时，大满贯日 5 小时，完全项目导向。
+此文件保留 2026 年 3-4 月的原始任务和勾选记录，用于审计历史，不再是当前每日执行入口。当前计划见 `NEXT_12_WEEKS.md`，当前能力见 `JOB_CAPABILITY_MATRIX.md`。
+
+历史 `[X]` 只表示当时计划/日志曾确认，并不证明学习者能独立实现、通过测试和解释金融假设。既有代码、总结和 Git 历史保留；未通过的新验收不得沿用旧“完成”结论。
+
+原计划前两周用于把 SQL 经验迁移到 Python/DuckDB/Pandas/Polars，后两周用于把数学公式转译为 NumPy/SciPy 代码。旧的按天节奏已由 12-15 小时/周的能力周期替代。
 
 > 💡 **学习指引**：每天的任务后方均附带了你需要去 **NotebookLM（AI驱动量化转型知识库）** 向 AI 提问或查阅的指定参考文档。
 
@@ -33,12 +37,12 @@
 - [X] 任务：浅尝 Polars 的懒加载（Lazy Evaluation）特性。感受列式处理与多线程在量化回测中的速度优势。(📚 查阅 NotebookLM: `DuckDB 官方文档与 Polars 交互概念`)
 - [X] 产出：一段使用 Polars 读取 CSV 并执行与前天相同聚合操作的代码，并对比耗时。
 
-### Day 6 (5小时)
+### Day 6（历史长时段任务）
 
 - [X] 任务：实战！从类似 yfinance 或 tushare 的免费接口抓取真实的某只指数 ETF 5 年日线数据，持久化存入 DuckDB 物理文件(`.duckdb`)。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 6: Data Loading, Storage`)
 - [X] 产出：本地成功生成包含真实连贯交易数据的 `.duckdb` 数据库文件。
 
-### Day 7 (5小时)
+### Day 7（历史长时段任务）
 
 - [X] 任务：自动化对账校验。用 SQL 在 DuckDB 算出月度平均收盘价，再用 Pandas 从该库读取全图后用 `.resample('M').mean()` 计算，断言两者结果一致。(📚 查阅 NotebookLM: `Python for Data Analysis -> Chapter 11: Time Series - Resampling`)
 - [X] 产出：包含 `assert` 断言通过用例的对账 Python 脚本。
@@ -72,19 +76,19 @@
 - [X] 任务：拥抱量化界标配存储架构——Parquet 格式。比起 CSV 的体积与反序列化速度优势在哪？怎么联手 DuckDB 使用？(📚 查阅 NotebookLM: `DuckDB 官方文档 -> Data Import/Export (Parquet)`)
 - [X] 产出：将清洗并关联好的宽表 DataFrame 直接压缩保存为 `clean_data.parquet` 文件。
 
-### Day 6 (5小时)
+### Day 6（历史长时段任务）
 
 - [X] 任务：项目面向对象重构。串联前两周，用面向对象 (OOP) 封装一个 `DataHandler` 类，暴露 `load_raw`, `clean`, `save_feature` 等标准方法。
 - [X] 产出：一个脱离了面条代码（Spaghetti code）的结构化 `data_pipeline.py`。
 
-### Day 7 (5小时)
+### Day 7（历史长时段任务）
 
 - [X] 任务：基建初次压力测试。尝试循环抓取/生成 50 只股票的数据并合并，测试你的 Pipeline 的内存占用，引入 `tqdm` 加上进度条监控体验。(📚 查阅 NotebookLM: 对 Pandas 的大规模数据处理与向量化进行摘要提问)
 - [X] 产出：输出含有 50 个股票维度（MultiIndex或长表形式）的复合面板数据。
 
 ## Week 3: 从理论到代码 - 线性代数与资产组合映射
 
-**🎯 里程碑产出 (Milestone)**：不调用现成的回测运算库，纯硬核手写 NumPy 矩阵运算，算出包含 3 只股票资产组合的整体收益率与协方差矩阵。
+**历史里程碑产出**：不调用现成库，手写 NumPy 矩阵运算，计算包含 3 只股票的组合收益率与协方差矩阵。该产出需要重新通过独立恢复训练后才能升级为能力证据。
 
 ### Day 1
 
@@ -108,41 +112,41 @@
 
 ### Day 5
 
-- [X] 任务：特征值与特征向量的金融具象意义（PCA 主成分提取市场 Beta 风险因子初探）。(📚 查阅 NotebookLM: `Mathematics for Machine Learning -> Chapter 4: Matrix Decompositions (Eigendecomposition & PCA)`)
+- [X] 任务（历史记录）：特征值与特征向量的金融含义（PCA 最大方差方向初探）。PCA 的 PC1 不能仅凭模拟数据或与等权组合相关就被“证明”为市场 Beta；命名需结合真实数据、载荷结构、基准和稳定性证据。(📚 查阅 NotebookLM: `Mathematics for Machine Learning -> Chapter 4: Matrix Decompositions (Eigendecomposition & PCA)`)
 - [X] 产出：通过 `scipy.linalg.eigh` 解剖你生成的协方差矩阵，提取最大的特征值（最大震荡方向）。
 
-### Day 6 (5小时)
+### Day 6（历史长时段任务）
 
-- [X] 任务：利用 NumPy 广播机制（Broadcasting）。干掉循环——完成连续 252 个交易日的每日组合批量计算。
-- [X] 产出：不用一行 `for` 循环，跑出全年的日常资金回测净值曲线序列。
+- [X] 任务（历史记录）：利用 NumPy 广播机制完成连续 252 个交易日的固定权重组合批量收益计算。
+- [X] 历史产出：不用 `for` 循环生成批量收益与净值曲线。`R @ W.T` 仅是向量化演示，不是包含信号、实际持仓、成交、成本、无法成交、现金和基准的完整回测。
 
-### Day 7 (5小时)
+### Day 7（已替代为 Week 1 + Week 3 验收）
 
-- [ ] 任务：项目沉淀及解耦。把本周散乱测试的公式片段封装成专业的 `PortfolioMath` Python 模块，预留给后续的 VectorBT 调用。
-- [ ] 产出：可复用的 `portfolio_math.py` 第三方工具模块雏形。
+- [ ] 任务：先不看原代码完成最新恢复训练；Week 3 再把纯计算、数据 I/O 和演示拆开，修复 `assert` 输入校验、可变默认参数和导入副作用。
+- [ ] 产出：独立完成的恢复训练、可导入核心模块、15-25 个有效测试和口述验收。现有 `day7_portfolio_math_module.py` 只是待验收历史输入，不得自动勾选。
 
-## Week 4: 从理论到代码 - 概率统计与风险分布
+## Week 4：概率统计与风险分布（旧安排已由 `NEXT_12_WEEKS.md` Week 2 替代）
 
 **🎯 里程碑产出 (Milestone)**：利用 Scipy 分布拟合真实数据，计算出个股的 95% 历史 VaR（在险价值），并用 matplotlib 渲染分布直方图。
 
 ### Day 1
 
-- [ ] 任务：探讨正态分布模型在极端行情中的致命伤（为什么大家都说金融数据其实是“尖峰厚尾”的）。(📚 查阅 NotebookLM: `Mathematics for Machine Learning -> Chapter 6: Gaussian Distribution`)
+- [ ] 任务（历史计划，已替代）：讨论正态分布对金融收益厚尾和极端行情刻画不足的条件与后果。(📚 查阅 NotebookLM: `Mathematics for Machine Learning -> Chapter 6: Gaussian Distribution`)
 - [ ] 产出：拉取真实的股票收益，与理想的均匀正态分布生成结果在直方图上叠图比对。
 
 ### Day 2
 
-- [ ] 任务：高阶动差代码化。用代码敲出描述统计四大天王：均值（Expected Value）、方差（Variance）、偏度（Skewness）、峰度（Kurtosis）。
+- [ ] 任务（历史计划，已替代）：计算均值（Expected Value）、方差（Variance）、偏度（Skewness）、峰度（Kurtosis）。
 - [ ] 产出：编写专门诊断个股的统计面函数，若峰度很高则直接 Print “存在厚尾极端风险”。
 
 ### Day 3
 
-- [ ] 任务：P-value 与假设检验。如何以概率的视角证明“这套策略赚钱不是随机碰运气”？(📚 查阅 NotebookLM: 为“假设检验与P-value的本质”向 NotebookLM 索取浅显的提问解答)
-- [ ] 产出：利用 `statsmodels` 跑一次一元线性回归（个股收益 Y 对抗 大盘收益 X），计算出 Alpha 截距并获取 P-value。
+- [ ] 任务（历史计划，已修正）：P-value 与假设检验。p-value 只能量化在指定零假设、抽样机制和模型前提下观察到当前或更极端结果的证据，不能证明策略赚钱不是运气。(📚 查阅 NotebookLM: “假设检验与 p-value 的本质”)
+- [ ] 历史产出（已替代）：运行一元线性回归，报告 Alpha、p-value、效应大小、置信区间、残差诊断与假设限制。
 
 ### Day 4
 
-- [ ] 任务：风险管理的护城河：什么是 VaR (Value at Risk)。理解历史分位数法的暴力与直观。
+- [ ] 任务（历史计划，已替代）：理解 VaR (Value at Risk) 及历史分位数法的直观、假设与局限。
 - [ ] 产出：只用一行 Pandas 接口 `.quantile(0.05)` 直接拿到个股日度单边极端风险值。
 
 ### Day 5
@@ -150,12 +154,12 @@
 - [ ] 任务：参数 VaR (Parametric VaR) 与正态假设推演。代入标准的 z-score 公式反推概率分布边缘。
 - [ ] 产出：手工用公式 $VaR = \mu - 1.645 \cdot \sigma$ 计算（95%置信度下单边1.645）并与昨天的蛮力历史 VaR 对比误差。
 
-### Day 6 (5小时)
+### Day 6（历史长时段任务，已修正）
 
-- [ ] 任务：蒙特卡洛模拟（Monte Carlo Simulation）的底层逻辑实现。抛硬币测试未来价格的无限种可能。
-- [ ] 产出：结合正态或 T 分布随机数发生器，预测某只股票在接下来 30 天可能走出的 1000 种几何布朗运动轨迹，画出震撼的“意大利面条图”。
+- [ ] 任务（历史计划，已替代）：实现 Monte Carlo/GBM，用于情景模拟、风险分析和模型理解，并讨论模型风险。
+- [ ] 历史产出（已替代）：在明确参数与分布假设下模拟 30 天的 1000 条路径；不得称为可靠预测未来股价。
 
-### Day 7 (5小时)
+### Day 7（历史长时段任务，已替代）
 
-- [ ] 任务：**Phase 1 结课大考项目实战**。全流程串联：拉取ETF（Week1&2清洗与Parquet存取） -> 算权重与组合风险（Week3矩阵运算） -> 产出一份含厚尾检验、VaR风控、蒙特卡洛预测的综合报告（Week4）。
-- [ ] 产出：一份能在 GitHub 上吸星的高质量 `Phase1_Final_Project.ipynb` 综合工作流分析代码笔记。
+- [ ] 任务（历史计划，已替代）：串联 ETF 数据、组合风险、厚尾、VaR/CVaR 与情景模拟，产出明确假设和限制的统计报告。
+- [ ] 历史产出（已替代）：可复现的研究报告；项目质量以数据契约、测试、样本外、成本、局限和讲解能力验收，不以 GitHub 星数验收。

@@ -5,11 +5,26 @@ description: "管理 Bohr 项目的 AI 量化学习全流程。当用户提到�
 
 # Bohr 量化学习工作流 (Quant Learning Workflow)
 
+## 2026-07-18 能力验收路由（最高优先级）
+
+本节覆盖下方旧的 28 天、每日打卡和自动生成答案流程；旧流程只为历史兼容保留。
+
+1. 当前计划权威源是 `curriculum/plans/NEXT_12_WEEKS.md`，当前能力权威源是 `curriculum/plans/JOB_CAPABILITY_MATRIX.md`。
+2. `Learning_Log.md`、旧 TODO 和 `Learning_Vault/` 是历史记录/证据；文件存在、AI 生成或 `[x]` 不等于掌握。
+3. 每次触发先运行只读的 `git status --short --branch`、`project/scripts/project_audit.py` 和 `project/scripts/curriculum_audit.py`，保护未提交修改。
+4. 每周使用 `project/templates/WEEKLY_ACCEPTANCE_TEMPLATE.md`。只有学习者“不看答案独立实现 + 自动测试通过 + 能解释金融含义和假设”同时满足，才更新能力矩阵为掌握。
+5. 不自动填写恢复训练、面试题或研究练习答案；AI 代码必须由学习者独立复现、测试和口述。
+6. 当前具体任务是 `NEXT_12_WEEKS.md` Week 1：不看历史代码完成 `Learning_Vault/Reviews/20260718_Week3_矩阵运算与PortfolioMath/恢复训练_Challenge.py`。未通过内容不得继续标记为掌握。
+7. 进度查询输出能力等级、证据、薄弱点、退出门槛和补救措施，不再输出按天进度条作为主要指标。`update_progress.py` 仅报告历史打卡且不写文件。
+8. Agent/LLM 最多 2-3 周且需真实因子最终样本外验证；模拟执行/治理 4-6 周；C++、实盘接口和高频研究不进入当前 12 周主线。
+
+若下方任何 Workflow 与本节、研究协议或工程基线冲突，以本节和当前计划为准。
+
 ## 项目概览
 
 **项目路径**: `d:\project\Bohr\`
-**目标**: 12 个月 AI 辅助量化转型学习计划，分 4 个阶段（Phase 1-4）
-**当前阶段**: Phase 1 - 基建与数理（Month 1，共 28 天）
+**目标**: 在全职工作并行、12-15 小时/周条件下，一年内获得量化相关岗位
+**当前阶段**: 未来 12 周 Week 1 - 恢复训练与真实能力盘点
 
 ### 核心目录结构
 
